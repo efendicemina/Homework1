@@ -13,7 +13,7 @@ public class ExpressionEvaluatorTest {
      * test addition and multiplication
      */
     @Test
-    public void EvaluateTest1(){
+    public void evaluateTest1(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertEquals(e.evaluate("( ( 1 + 3 ) * 4 )"),16);
     }
@@ -22,7 +22,7 @@ public class ExpressionEvaluatorTest {
      * tests subtraction, division and sqrt operator
      */
     @Test
-    public void EvaluateTest2(){
+    public void evaluateTest2(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertEquals(e.evaluate("( ( 1 - 3 ) / ( sqrt 4 ) )"),-1);
     }
@@ -31,7 +31,7 @@ public class ExpressionEvaluatorTest {
      * tests addition and division
      */
     @Test
-    public void EvaluateTest3(){
+    public void evaluateTest3(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertEquals(e.evaluate("( ( 1 + 3 ) / ( 4 * 1 ) )"),1);
     }
@@ -40,7 +40,7 @@ public class ExpressionEvaluatorTest {
      * test a bit longer expression with a lot of brackets
      */
     @Test
-    public void EvaluateTest4(){
+    public void evaluateTest4(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) + ( ( 4 + 5 ) + ( 1 * 0 ) ) )"),21);
     }
@@ -49,7 +49,7 @@ public class ExpressionEvaluatorTest {
      * test if the function is throwing an exception and if it's the right exception
      */
     @Test
-    public void EvaluateTest5(){
+    public void evaluateTest5(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertThrows( RuntimeException.class, () -> e.evaluate("( ( 1 + 3 ) *  )"));
     }
@@ -57,7 +57,7 @@ public class ExpressionEvaluatorTest {
      * test for all operators at once
      */
     @Test
-    public void EvaluateTest6(){
+    public void evaluateTest6(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) / ( ( 4 + 5 ) + sqrt ( 1 ) ) ) "),1.2);
     }
@@ -65,7 +65,7 @@ public class ExpressionEvaluatorTest {
      * test if the function is throwing an exception when we input letters
      */
     @Test
-    public void EvaluateTest7(){
+    public void evaluateTest7(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertThrows( RuntimeException.class, () -> e.evaluate("( ( 1 + 3 ) *ghhz  )"));
     }
@@ -73,7 +73,7 @@ public class ExpressionEvaluatorTest {
      * test if the function is throwing an exception when we input just sqrt
      */
     @Test
-    public void EvaluateTest8(){
+    public void evaluateTest8(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertThrows( RuntimeException.class, () -> e.evaluate("sqrt"));
     }
@@ -81,7 +81,7 @@ public class ExpressionEvaluatorTest {
      * test if the function is throwing an exception when we do not have enough brackets
      */
     @Test
-    public void EvaluateTest9(){
+    public void evaluateTest9(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertThrows( RuntimeException.class, () -> e.evaluate("( 1 + 2 + 3 + ( 6 ) )"));
     }
