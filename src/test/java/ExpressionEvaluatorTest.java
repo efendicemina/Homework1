@@ -24,7 +24,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void EvaluateTest2(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( 1 - 3 ) / sqrt ( 4 ) )"),-1);
+        assertEquals(e.evaluate("( ( 1 - 3 ) / ( sqrt 4 ) )"),-1);
     }
 
     /**
@@ -59,7 +59,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void EvaluateTest6(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) / ( ( 4 + 5 ) + sqrt ( 1 ) ) )"),1.2);
+        assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) / ( ( 4 + 5 ) + sqrt ( 1 ) ) ) "),1.2);
     }
     /**
      * test if the function is throwing an exception when we input letters
@@ -76,6 +76,14 @@ public class ExpressionEvaluatorTest {
     public void EvaluateTest8(){
         ExpressionEvaluator e= new ExpressionEvaluator();
         assertThrows( RuntimeException.class, () -> e.evaluate("sqrt"));
+    }
+    /**
+     * test if the function is throwing an exception when we do not have enough brackets
+     */
+    @Test
+    public void EvaluateTest9(){
+        ExpressionEvaluator e= new ExpressionEvaluator();
+        assertThrows( RuntimeException.class, () -> e.evaluate("( 1 + 2 + 3 + ( 6 ) )"));
     }
     /**
      * test for isDigit method, number is given

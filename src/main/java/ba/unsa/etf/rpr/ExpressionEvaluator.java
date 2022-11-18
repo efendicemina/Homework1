@@ -33,6 +33,14 @@ public class ExpressionEvaluator {
      */
     public Double evaluate(String s) {
         String[] str = s.split(" ");
+        int left = 0, right = 0, operator=0;
+        for(String x: str) {
+
+            if (x.equals("(")) left = left + 1;
+            if (x.equals(")")) right = right + 1;
+            if(x.equals("+") || x.equals("-") || x.equals("*") || x.equals("/") || x.equals("sqrt") ) operator=operator+1;
+        }
+        if (left != right || operator!=right)   throw new RuntimeException();
         for (String x : str) {
             if (!x.equals("(") && !x.equals("+") && !x.equals("-") && !x.equals("*") && !x.equals("/") && !x.equals("sqrt") && !x.equals(")") && !isDigit(x)) {
                 throw new RuntimeException();

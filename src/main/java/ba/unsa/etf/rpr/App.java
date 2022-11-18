@@ -28,7 +28,8 @@ public class App {
                             Input not correct.
                             Please note that for every operator you use you need the same number of brackets.
                             Numbers must be real number values.
-                            No letters are allowed except for sqrt operator.""");
+                            No letters are allowed except for sqrt operator.
+                            Space between every operator and number is mandatory.""");
         }
     }
 }
