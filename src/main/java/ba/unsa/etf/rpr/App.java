@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+
 /**
  * class that is entry point for our program
  * @author Emina Efendic
@@ -13,12 +14,14 @@ public class App {
     public static void main(String[] args) {
         StringBuilder str = new StringBuilder();
         try {
-            if (args.length % 2 == 0) throw new RuntimeException();
+            if (args.length >1) { //only one string allowed
+                throw new RuntimeException();
+            }
             for (String arg : args) {
                 str.append(arg).append(" ");
-                ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator();
-                System.out.println(expressionEvaluator.evaluate(String.valueOf(str)));
             }
+            ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator();
+            System.out.println(expressionEvaluator.evaluate(String.valueOf(str)));
         }
         catch(RuntimeException e) {
             System.out.println("""

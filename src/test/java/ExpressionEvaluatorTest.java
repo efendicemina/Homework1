@@ -70,6 +70,14 @@ public class ExpressionEvaluatorTest {
         assertThrows( RuntimeException.class, () -> e.evaluate("( ( 1 + 3 ) *ghhz  )"));
     }
     /**
+     * test if the function is throwing an exception when we input just sqrt
+     */
+    @Test
+    public void EvaluateTest8(){
+        ExpressionEvaluator e= new ExpressionEvaluator();
+        assertThrows( RuntimeException.class, () -> e.evaluate("sqrt"));
+    }
+    /**
      * test for isDigit method, number is given
      */
     @Test
