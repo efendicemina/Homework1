@@ -86,6 +86,14 @@ public class ExpressionEvaluatorTest {
         assertThrows( RuntimeException.class, () -> e.evaluate("( 1 + 2 + 3 + ( 6 ) )"));
     }
     /**
+     * test if the function is throwing an exception when we do not have enough brackets
+     */
+    @Test
+    public void evaluateTest10(){
+        ExpressionEvaluator e= new ExpressionEvaluator();
+        assertThrows( RuntimeException.class, () -> e.evaluate("( 1 + 2 + 3 + 6 * 4 / 6 )"));
+    }
+    /**
      * test for isDigit method, number is given
      */
     @Test
