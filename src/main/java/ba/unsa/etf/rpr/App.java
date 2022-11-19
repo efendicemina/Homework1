@@ -21,7 +21,7 @@ public class App {
                 str.append(arg).append(" ");
             }
             ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator();
-            System.out.println(expressionEvaluator.evaluate(String.valueOf(str)));
+            System.out.println("Value of the expression is: " + expressionEvaluator.evaluate(String.valueOf(str)));
         }
         catch(RuntimeException e) {
             System.out.println("""

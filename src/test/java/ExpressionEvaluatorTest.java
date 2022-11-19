@@ -24,7 +24,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest2(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(-1,e.evaluate("( ( 1 - 3 ) / ( sqrt 4 ) )"));
+        assertEquals(0,e.evaluate("( 1 - ( sqrt ( 4 ) / 2 ) )"));
     }
 
     /**
