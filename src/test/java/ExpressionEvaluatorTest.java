@@ -15,7 +15,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest1(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( 1 + 3 ) * 4 )"),16);
+        assertEquals(16,e.evaluate("( ( 1 + 3 ) * 4 )"));
     }
 
     /**
@@ -24,7 +24,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest2(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( 1 - 3 ) / ( sqrt 4 ) )"),-1);
+        assertEquals(-1,e.evaluate("( ( 1 - 3 ) / ( sqrt 4 ) )"));
     }
 
     /**
@@ -33,7 +33,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest3(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( 1 + 3 ) / ( 4 * 1 ) )"),1);
+        assertEquals(1,e.evaluate("( ( 1 + 3 ) / ( 4 * 1 ) )"));
     }
 
     /**
@@ -42,7 +42,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest4(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) + ( ( 4 + 5 ) + ( 1 * 0 ) ) )"),21);
+        assertEquals(21,e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) + ( ( 4 + 5 ) + ( 1 * 0 ) ) )"));
     }
 
     /**
@@ -59,7 +59,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void evaluateTest6(){
         ExpressionEvaluator e= new ExpressionEvaluator();
-        assertEquals(e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) / ( ( 4 + 5 ) + sqrt ( 1 ) ) ) "),1.2);
+        assertEquals(1.2,e.evaluate("( ( ( 1 + 3 ) * ( 4 - 1 ) ) / ( ( 4 + 5 ) + sqrt ( 1 ) ) ) "));
     }
     /**
      * test if the function is throwing an exception when we input letters
